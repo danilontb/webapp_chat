@@ -9,7 +9,5 @@ $.getJSON( "ajax/users.php", function( data ) {
 });
 
 
-document.getElementById("userlist").onclick = function(e) {
-    console.log(e.target.valueOf());
-}
+
 
