@@ -1,10 +1,12 @@
 <?php
+require("../config.php");
+
 
 $user1=$_GET["user1"];
 $user2=$_GET["user2"];
 $text=$_GET["text"];
 
-require("../config.php");
+
 $mysqli = new mysqli($dbhost, $dbuser, $dbpwd, $db);
 
 if (!($stmt = $mysqli->prepare("INSERT INTO chat (time, user1, user2, text) VALUES(CURRENT_TIMESTAMP, ?, ?, ?)"))) {

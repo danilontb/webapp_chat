@@ -48,21 +48,15 @@
     </div>
 
     <div class="container">
-        <button onclick="zeigean()">was</button>
+
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-12">
 
-            <p  id="p1"></p>
 
-			<table class="table table-striped">
+			<table id="chats" class="table table-striped">
 				<tbody>
-					<tr>
-						<td>Hallo Fritz, wie geht es dir?</td>
-					</tr>
-					<tr>
-						<td>Ich habe es ganz gut. Und du?</td>
-					</tr>
+					<!-- hier kommen die chats, die per jquery abgefragt wurden -->
 				</tbody>
 			</table>
         </div>
@@ -70,12 +64,10 @@
 
 	<nav class="navbar navbar-default navbar-fixed-bottom">
 		  <div class="container">
-			<form class="navbar-form">
 				<div class="form-group">
-					<input type="text" placeholder="Text" class="form-control">
+					<input id="sendText" type="text" placeholder="Text" class="form-control">
 				</div>
-				<button type="submit" class="btn btn-success">Send</button>
-			</form>
+				<button id="btnsend" class="btn btn-success">Send</button>
 		  </div>
 		</nav>   
 	</div> <!-- /container -->
@@ -89,6 +81,7 @@
     <script src="bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
 	
 	<script src="script.js"></script>
+    <script src="getAndSetChat.js"></script>
 
   </body>
 </html>
