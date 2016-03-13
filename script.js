@@ -1,25 +1,21 @@
 
 
+var username1;
+var username2;
+
 $(document).ready(function() {
 	$('#loginButton').click(function() {
+		localStorage.clear();
 		window.location.href = 'list.html';
+			console.log("login ist erwünscht")
+		username1 = document.getElementById("username").value;
+		storeValue("user1", username1);
+
 	});
 	$('#userTable').on('click', 'tr', function() {
 		window.location.href = 'chat.html';
 	});
 });
-
-
-var username;
-
-$('#loginButton').click(function() {
-	//mit diesem Username melde ich mich beim Chatprogramm an.
-	 username = document.getElementById("username").value;
-	console.log(storeValue("user1", username));
-
-});
-
-
 
 
 
@@ -42,32 +38,11 @@ function getStoredValue(key) {
 }
 
 
+function getRowInformation(content){
+	//console.log(content.rowIndex);
+	console.log(document.getElementById("userTable").rows[content.rowIndex].cells[0].innerHTML);
+	username2 = document.getElementById("userTable").rows[content.rowIndex].cells[0].innerHTML;
+	storeValue("user2", username2);
+}
 
-/* Hier wird herausgefunden welches Element von der Tabelle gedrückt wurde */
-function findRowNumber(){
-	var rowIdx;
-	var rowData= [];
-	var table= document.getElementById('userlist');
-	var rows= table.getElementsByTagName('tr');
-	var selectedRow;
-	var rowCellValue;
-	for(i= 0;i<rows.length;i++){
-		rows[i].onclick= function(){
-			rowIdx= this.rowIndex;
-			selectedRow= this.cells;
-			for(j= 0;j<selectedRow.length;j++){
-				rowCellValue= selectedRow[j].textContent ||
-					selectedRow[j].innerText;
-				rowData.push('cell '+j+': '+rowCellValue);
-			}
-			storeValue("user3", rowCellValue);
-			console.log(getStoredValue("user1"));
-			console.log(getStoredValue("user3"));
-		}
-	}
-};
 
-function zeigean() {
-//anzeige der namen
-	document.getElementById("p1").innerHTML = getStoredValue("user1") + " : " + getStoredValue("user3");
-};

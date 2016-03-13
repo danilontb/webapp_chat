@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="81c9b6a4-7919-400b-81be-1c2ba6614c0a" name="schulserver" url="http://web.fh-htwchur.ch">
-        <fileTransfer host="web.fh-htwchur.ch" port="21" rootFolder="/web/chat" username="614879_8_1">
+        <fileTransfer host="web.fh-htwchur.ch" port="21" rootFolder="/web/chat" password="dfefdffcdfdfdfd8dfe3df99dfccdfe9dfc2dfe7dfc1dfdd" username="614879_8_1">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

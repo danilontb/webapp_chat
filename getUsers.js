@@ -4,7 +4,7 @@
 
 $.getJSON( "ajax/users.php", function( data ) {
     $.each( data, function( key, val ) {
-        $("tbody").append("<tr><td>" + val + "</td></tr>");
+        $("tbody").append("<tr onclick='getRowInformation(this)'><td>" + val + "</td></tr>");
     });
 });
 
