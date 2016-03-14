@@ -7,7 +7,7 @@ $(document).ready(function() {
 	$('#loginButton').click(function() {
 		localStorage.clear();
 		window.location.href = 'list.html';
-			console.log("login ist erwünscht")
+
 		username1 = document.getElementById("username").value;
 		storeValue("user1", username1);
 
