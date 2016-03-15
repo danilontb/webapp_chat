@@ -3,6 +3,7 @@
  */
 $(document).ready(function() {
 
+
     users = {
         user1 : getStoredValue("user1"),
         user2 : getStoredValue("user2")
@@ -21,7 +22,21 @@ $(document).ready(function() {
         });
     });
 
+    setInterval(callInfos, 2000);
 
+    function callInfos() {
+        $("tbody").find('tr').remove();
+
+        $.getJSON("ajax/chats.php", users, function (data) {
+            $.each(data, function (key, val) {
+                if (val.user1 == senduser) {
+                    $("tbody").append("<tr ><td align='left'>" + val.user1 + ': ' + val.text + "</td></tr>");
+                } else {
+                    $("tbody").append("<tr ><td align='right'>" + val.user1 + ': ' + val.text + "</td></tr>");
+                }
+            });
+        });
+    }
 
  $('#chats').scrollTop('bottom');
 
