@@ -1,10 +1,9 @@
 
 
-var username1;
-var username2;
-
 $(document).ready(function() {
 	$('#loginButton').click(function() {
+		var username1 = "";
+		
 		localStorage.clear();
 		window.location.href = 'list.html';
 
@@ -39,6 +38,8 @@ function getStoredValue(key) {
 
 
 function getRowInformation(content){
+	var username2 = "";
+	
 	//console.log(content.rowIndex);
 	console.log(document.getElementById("userTable").rows[content.rowIndex].cells[0].innerHTML);
 	username2 = document.getElementById("userTable").rows[content.rowIndex].cells[0].innerHTML;
