@@ -25,7 +25,7 @@ $(document).ready(function() {
     setInterval(callInfos, 2000);
 
     function callInfos() {
-        $("tbody").find('tr').remove();
+        $("tbody").empty();
 
         $.getJSON("ajax/chats.php", users, function (data) {
             $.each(data, function (key, val) {
