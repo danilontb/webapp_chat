@@ -12,7 +12,7 @@ $(document).ready(function() {
     senduser = getStoredValue("user1");
     reciveuser = getStoredValue("user2");
 
-    $.getJSON( "ajax/chats.php", users, function( data ) {
+    function appendUsers(data) {
         $.each( data, function( key, val ) {
             if(val.user1 == senduser) {
                 $("tbody").append("<tr ><td align='left'>" + val.user1 + ': ' + val.text + "</td></tr>");
@@ -20,6 +20,10 @@ $(document).ready(function() {
                 $("tbody").append("<tr ><td align='right'>" + val.user1 + ': ' + val.text + "</td></tr>");
             }
         });
+    }
+
+    $.getJSON( "ajax/chats.php", users, function( data ) {
+        appendUsers(data);
     });
 
     setInterval(callInfos, 2000);
@@ -27,15 +31,7 @@ $(document).ready(function() {
     function callInfos() {
         $("tbody").find('tr').remove();
 
-        $.getJSON("ajax/chats.php", users, function (data) {
-            $.each(data, function (key, val) {
-                if (val.user1 == senduser) {
-                    $("tbody").append("<tr ><td align='left'>" + val.user1 + ': ' + val.text + "</td></tr>");
-                } else {
-                    $("tbody").append("<tr ><td align='right'>" + val.user1 + ': ' + val.text + "</td></tr>");
-                }
-            });
-        });
+        appendUsers(data);
     }
 
  $('#chats').scrollTop('bottom');
