@@ -8,7 +8,7 @@ $(document).ready(function() {
 		localStorage.clear();
 		window.location.href = 'list.html';
 
-		username1 = document.getElementById("username").value;
+		username1 = $("#username").val();
 		storeValue("user1", username1);
 
 	});
@@ -40,8 +40,8 @@ function getStoredValue(key) {
 
 function getRowInformation(content){
 	//console.log(content.rowIndex);
-	console.log(document.getElementById("userTable").rows[content.rowIndex].cells[0].innerHTML);
-	username2 = document.getElementById("userTable").rows[content.rowIndex].cells[0].innerHTML;
+	console.log($("$userTable").rows[content.rowIndex].cells[0].innerHTML);
+	username2 = $("#userTable").rows[content.rowIndex].cells[0].innerHTML;
 	storeValue("user2", username2);
 }
 
