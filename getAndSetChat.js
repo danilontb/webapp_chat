@@ -3,14 +3,14 @@
  */
 $(document).ready(function() {
 
-
-    users = {
-        user1 : getStoredValue("user1"),
-        user2 : getStoredValue("user2")
-    };
-
     senduser = getStoredValue("user1");
     reciveuser = getStoredValue("user2");
+
+    users = {
+        user1 : senduser,
+        user2 : reciveuser
+    };
+
 
     $.getJSON( "ajax/chats.php", users, function( data ) {
         $.each( data, function( key, val ) {
