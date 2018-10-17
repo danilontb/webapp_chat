@@ -83,7 +83,9 @@
             password: "1234"
             },function(data){
                 console.log(data);
-            })
+            }).error(functon(){
+		console.err('Fehler beim abruf der Logindaten');
+		});
         });          
     </script>
   </body>
